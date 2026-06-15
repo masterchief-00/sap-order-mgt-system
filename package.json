@@ -1,0 +1,44 @@
+{
+  "name": "sap-order-mgt-system",
+  "version": "1.0.0",
+  "description": "Welcome to your new CAP project.",
+  "homepage": "https://github.com/masterchief-00/sap-order-mgt-system#readme",
+  "bugs": {
+    "url": "https://github.com/masterchief-00/sap-order-mgt-system/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masterchief-00/sap-order-mgt-system.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "cds-serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": "db/oms.db"
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "@cap-js/hana": "^2",
+    "@sap-cloud-sdk/connectivity": "^4.7.0",
+    "@sap-cloud-sdk/http-client": "^4.7.0",
+    "@sap-cloud-sdk/resilience": "^4.7.0",
+    "@sap/cds": "^9.9.1",
+    "@sap/xssec": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^2.4",
+    "cds-plugin-ui5": "^0.13.6",
+    "sqlite3": "^6.0.1"
+  }
+}
