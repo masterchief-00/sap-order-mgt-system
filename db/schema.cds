@@ -9,8 +9,6 @@ entity Products : managed {
         price       : Decimal;
         stock       : Integer;
         expiryDate  : Date;
-        sales       : Association to many OrderItems
-                          on sales.product = $self;
         reviews     : Composition of many Reviews;
 }
 
@@ -25,8 +23,7 @@ entity User : managed {
 entity Orders : managed {
     key ID         : UUID;
         customer   : Association to User;
-        items      : Association to many OrderItems
-                         on items.order = $self;
+        items      : Composition of many OrderItems;
         totalPrice : Decimal;
         status     : String enum {
             completed = 'Completed';
@@ -35,10 +32,9 @@ entity Orders : managed {
         }
 }
 
-entity OrderItems : managed {
+aspect OrderItems : managed {
     key ID         : UUID;
         product    : Association to Products;
-        order      : Association to Orders;
         quantity   : Integer;
         unit_price : Decimal;
 }

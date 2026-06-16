@@ -8,7 +8,9 @@ service CustomerService @(odata: '/browse') {
         excluding {
             createdAt,
             createdBy,
-            sales
+            sales,
+            modifiedAt,
+            modifiedBy
         };
 
     @odata.draft.enabled
@@ -31,7 +33,6 @@ service CustomerService @(odata: '/browse') {
         }
     ])                        as projection on my.Products.reviews;
 
-    @odata.draft.enabled
     entity Orders @(restrict: [
         {
             grant: 'READ',
@@ -44,7 +45,6 @@ service CustomerService @(odata: '/browse') {
         }
     ])                        as projection on my.Orders;
 
-    @odata.draft.enabled
     entity OrderItems @(restrict: [
         {
             grant: 'READ',
@@ -55,5 +55,5 @@ service CustomerService @(odata: '/browse') {
             grant: 'CREATE',
             to   : 'authenticated-user'
         }
-    ])                        as projection on my.OrderItems;
+    ])                        as projection on my.Orders.items;
 }

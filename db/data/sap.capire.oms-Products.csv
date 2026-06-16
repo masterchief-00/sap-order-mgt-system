@@ -1,0 +1,11 @@
+ID,title,description,price,stock,expiryDate,createdAt,createdBy,modifiedAt,modifiedBy
+60417645-2b7e-430d-9571-3931f7007c14,title-6041764,description-6041764,75.14,64,2005-01-11,2009-05-12T22:00:00.000Z,createdBy.3lhus@example.org,2005-10-04T22:00:00.000Z,modifiedBy.3lhus@example.com
+60417651-2633-4ead-bf6c-34e52f914ad5,title-6041765,description-6041765,11.19,80,2016-09-29,2011-11-24T22:00:00.000Z,createdBy.3lhut@example.net,2019-03-29T22:00:00.000Z,modifiedBy.3lhut@example.org
+60417662-8b42-4695-b1f4-77182f3cd51a,title-6041766,description-6041766,56.29,23,2007-03-23,2019-08-17T22:00:00.000Z,createdBy.3lhuu@example.com,2021-01-26T22:00:00.000Z,modifiedBy.3lhuu@example.com
+60417673-0318-466a-9428-b137c2af209a,title-6041767,description-6041767,74.71,72,2022-12-31,2006-12-05T22:00:00.000Z,createdBy.3lhuv@example.org,2010-03-20T22:00:00.000Z,modifiedBy.3lhuv@example.net
+6041768c-55c0-4299-96f5-60d19e33fd10,title-6041768,description-6041768,14.71,42,2005-09-04,2019-03-30T22:00:00.000Z,createdBy.3lhuw@example.com,2014-11-14T22:00:00.000Z,modifiedBy.3lhuw@example.com
+60417691-0418-47ed-9ea0-3fdb1d319ed5,title-6041769,description-6041769,96.91,41,2014-06-07,2002-01-13T22:00:00.000Z,createdBy.3lhux@example.net,2017-10-10T22:00:00.000Z,modifiedBy.3lhux@example.net
+6041770d-cc10-401f-b3a7-fdf1f674f389,title-6041770,description-6041770,48.02,50,2006-05-07,2021-12-09T22:00:00.000Z,createdBy.3lhuy@example.com,2010-11-07T22:00:00.000Z,modifiedBy.3lhuy@example.com
+60417719-bd20-4343-bc64-0e2d13cb7df5,title-6041771,description-6041771,13.34,72,2012-03-14,2004-01-13T22:00:00.000Z,createdBy.3lhuz@example.com,2023-05-06T22:00:00.000Z,modifiedBy.3lhuz@example.net
+6041772e-a3e3-4b96-8236-87a23bb13732,title-6041772,description-6041772,50.51,32,2019-08-07,2011-04-13T22:00:00.000Z,createdBy.3lhv0@example.net,2000-03-03T22:00:00.000Z,modifiedBy.3lhv0@example.net
+60417733-5323-4aac-9b9e-08d94e84a7f6,title-6041773,description-6041773,57.69,5,2004-06-20,2014-04-14T22:00:00.000Z,createdBy.3lhv1@example.org,2012-07-31T22:00:00.000Z,modifiedBy.3lhv1@example.org

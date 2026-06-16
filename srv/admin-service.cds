@@ -10,8 +10,7 @@ service AdminService @(
     @odata.draft.enabled
     entity Orders     as projection on my.Orders;
 
-    @odata.draft.enabled
-    entity OrderItems as projection on my.OrderItems;
+    entity OrderItems as projection on my.Orders.items;
 
     @odata.draft.enabled
     entity User       as projection on my.User;

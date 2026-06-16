@@ -1,0 +1,127 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### Products
+# @name Products_GET
+GET {{server}}/browse/Products?$expand=reviews
+Authorization: Basic {{username}}:{{password}}
+
+### Products
+# @name Products_POST
+POST {{server}}/admin/Products
+Authorization: Basic {{username}}:{{password}}
+Content-Type: application/json
+
+{
+  "title": "Laptop G45",
+  "description": "Laptop G45 description",
+  "price": 1256.29,
+  "stock": 23,
+  "expiryDate": "2027-03-23",
+  "reviews":[
+    {
+      "rating": 4.0,
+      "reviewer_ID": "27718225-7148-406d-bf37-aba219271c3f",
+      "comment": "Very good product" 
+    },
+    {
+      "rating": 3.0,
+      "reviewer_ID": "27718226-6e50-471f-b264-72ce829ac506",
+      "comment": "mid" 
+    },
+    {
+      "rating": 5.0,
+      "reviewer_ID": "27718227-3ca9-4455-8a14-146617341456",
+      "comment": "nice" 
+    }
+  ]
+}
+
+
+### Reviews
+# @name Reviews_GET
+GET {{server}}/browse/Reviews
+Authorization: Basic {{username}}:{{password}}
+
+### Orders
+# @name Orders_GET
+GET {{server}}/browse/Orders?$expand=items
+Authorization: Basic {{username}}:{{password}}
+
+### Orders
+# @name Orders_POST
+POST {{server}}/browse/Orders
+Authorization: Basic {{username}}:{{password}}
+Content-Type: application/json
+
+{
+  "customer_ID": "5553542f-4efd-4dd8-b51d-9b15b6f1780e",
+  "totalPrice": 2627.7,
+  "status": "pending",
+  "items":[
+    {
+      "product_ID": "7fb8ed23-740c-45cc-9bb5-b116d935f6ff",
+      "quantity": 12,
+      "unit_price": 1256.29
+    },
+    {
+      "product_ID": "60417733-5323-4aac-9b9e-08d94e84a7f6",
+      "quantity": 1,
+      "unit_price": 57.69
+    }
+  ]
+}
+
+### OrderItems
+# @name OrderItems_GET
+GET {{server}}/browse/OrderItems
+Authorization: Basic {{username}}:{{password}}
+
+
+### OrderItems
+# @name OrderItems_POST
+POST {{server}}/browse/OrderItems
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "19477461-f1d0-4142-be8a-b713431d2315",
+  "createdAt": "2020-07-25T22:00:00.000Z",
+  "createdBy": "createdBy.blgwl@example.net",
+  "modifiedAt": "2015-05-29T22:00:00.000Z",
+  "modifiedBy": "modifiedBy.blgwl@example.net",
+  "product": {
+    "ID": "12231967-3788-4fbe-80dd-b13cbc224ad9"
+  },
+  "quantity": 77,
+  "unit_price": 42.29
+}
+
+
+### OrderItems
+# @name OrderItems_PATCH
+PATCH {{server}}/browse/OrderItems(up_=[object Object],ID=19477461-f1d0-4142-be8a-b713431d2315)
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "19477461-f1d0-4142-be8a-b713431d2315",
+  "createdAt": "2020-07-25T22:00:00.000Z",
+  "createdBy": "createdBy.blgwl@example.net",
+  "modifiedAt": "2015-05-29T22:00:00.000Z",
+  "modifiedBy": "modifiedBy.blgwl@example.net",
+  "product": {
+    "ID": "12231967-3788-4fbe-80dd-b13cbc224ad9"
+  },
+  "quantity": 77,
+  "unit_price": 42.29
+}
+
+
+### OrderItems
+# @name OrderItems_DELETE
+DELETE {{server}}/browse/OrderItems(up_=[object Object],ID=19477461-f1d0-4142-be8a-b713431d2315)
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}

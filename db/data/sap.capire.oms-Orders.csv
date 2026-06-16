@@ -1,0 +1,11 @@
+ID,customer_ID,totalPrice,status,createdAt,createdBy,modifiedAt,modifiedBy
+28291370-ce30-4e2f-b519-79ccc67c4967,5553542f-4efd-4dd8-b51d-9b15b6f1780e,37.41,Completed,2011-04-04T22:00:00.000Z,createdBy.gudre@example.org,2009-10-21T22:00:00.000Z,modifiedBy.gudre@example.com
+28291371-e088-453f-bdd9-2cbf01fb39a8,5553542f-4efd-4dd8-b51d-9b15b6f1780e,29.88,Pending,2014-05-27T22:00:00.000Z,createdBy.gudrf@example.net,2001-08-07T22:00:00.000Z,modifiedBy.gudrf@example.org
+28291372-f948-47b9-a563-2cb9d7c9c59a,5553542f-4efd-4dd8-b51d-9b15b6f1780e,100.43,Pending,2001-10-01T22:00:00.000Z,createdBy.gudrg@example.com,2004-01-04T22:00:00.000Z,modifiedBy.gudrg@example.org
+28291373-a935-4f66-bd43-f2e1a8d7769e,5553542f-4efd-4dd8-b51d-9b15b6f1780e,96.1,Completed,2023-02-24T22:00:00.000Z,createdBy.gudrh@example.com,2014-07-12T22:00:00.000Z,modifiedBy.gudrh@example.net
+28291374-9b01-4103-8a82-fb6883960d16,5553542f-4efd-4dd8-b51d-9b15b6f1780e,32.12,Pending,2021-09-06T22:00:00.000Z,createdBy.gudri@example.org,2000-09-17T22:00:00.000Z,modifiedBy.gudri@example.net
+28291375-eff1-434f-a54e-21ed04f09c56,5553542f-4efd-4dd8-b51d-9b15b6f1780e,36.27,Pending,2010-12-04T22:00:00.000Z,createdBy.gudrj@example.net,2020-08-06T22:00:00.000Z,modifiedBy.gudrj@example.net
+28291376-f9ee-4401-8401-e5738abfa312,5553542f-4efd-4dd8-b51d-9b15b6f1780e,94.92,Cancelled,2008-11-24T22:00:00.000Z,createdBy.gudrk@example.com,2006-12-25T22:00:00.000Z,modifiedBy.gudrk@example.net
+28291377-bc25-4e3b-9097-a88aa868a754,5553542f-4efd-4dd8-b51d-9b15b6f1780e,28.95,Completed,2019-07-24T22:00:00.000Z,createdBy.gudrl@example.net,2010-07-01T22:00:00.000Z,modifiedBy.gudrl@example.org
+28291378-ce59-4f8b-b1a1-260928c39312,5553542f-4efd-4dd8-b51d-9b15b6f1780e,38.44,Completed,2014-01-17T22:00:00.000Z,createdBy.gudrm@example.org,2008-12-14T22:00:00.000Z,modifiedBy.gudrm@example.com
+28291379-f6e9-4522-9c76-69b3c402bb77,5553542f-4efd-4dd8-b51d-9b15b6f1780e,22.84,Completed,2006-08-13T22:00:00.000Z,createdBy.gudrn@example.com,2017-07-24T22:00:00.000Z,modifiedBy.gudrn@example.org
