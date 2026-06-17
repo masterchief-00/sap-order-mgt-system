@@ -18,7 +18,6 @@ service FioriAdminService @(
 
     entity OrderItems as projection on my.Orders.items;
 
-    @odata.draft.enabled
     entity User       as projection on my.User;
 }
 

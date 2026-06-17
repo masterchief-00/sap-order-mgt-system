@@ -5,6 +5,10 @@ module.exports = class CustomerService extends cds.ApplicationService {
     this.before('READ', req => {
       if (req.query && req.query.SELECT) {
         const query = req.query.SELECT
+
+        if (req.target && req.target.name !== 'FioriAdminService.Products')
+          return
+
         if (!query.columns) query.columns = ['*']
         const hasReviews = query.columns.some(
           col => col.ref && col.ref[0] === 'reviews'

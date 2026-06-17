@@ -118,11 +118,17 @@
               "controlConfiguration": {
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
-                    "type": "GridTable"
+                    "type": "GridTable",
+                    "creationMode": {
+                      "name": "NewPage"
+                    }
                   },
                   "columns": {
                     "DataField::title": {
                       "widthIncludingColumnHeader": true
+                    },
+                    "DataFieldForAnnotation::DataPoint::averageRating": {
+                      "width": "150px"
                     }
                   }
                 }
@@ -143,6 +149,18 @@
                 "reviews": {
                   "detail": {
                     "route": "Products_reviewsObjectPage"
+                  }
+                }
+              },
+              "controlConfiguration": {
+                "reviews/@com.sap.vocabularies.UI.v1.LineItem#ReviewsSubmitted": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable"
+                  },
+                  "columns": {
+                    "DataFieldForAnnotation::DataPoint::rating": {
+                      "width": "300px"
+                    }
                   }
                 }
               }
