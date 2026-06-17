@@ -5,7 +5,13 @@ service FioriAdminService @(
     odata   : '/fiori/admin'
 ) {
     @odata.draft.enabled
-    entity Products   as projection on my.Products;
+    entity Products   as
+        projection on my.Products {
+            *,
+            virtual 2 as stockCriticality : Integer,
+            virtual 0 as reviewCount      : Integer,
+            virtual 0 as averageRating    : Decimal
+        };
 
     @odata.draft.enabled
     entity Orders     as projection on my.Orders;

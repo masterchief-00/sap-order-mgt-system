@@ -16,7 +16,8 @@
   "main": "index.js",
   "scripts": {
     "start": "cds-serve",
-    "test": "cross-env cds_env_profiles=test jest"
+    "test": "cross-env cds_env_profiles=test jest",
+    "watch-products": "cds watch --open ns.products/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "jest": {
     "testEnvironment": "node"
@@ -56,5 +57,11 @@
     "cross-fetch": "^4.1.0",
     "jest": "^30.4.2",
     "sqlite3": "^6.0.1"
-  }
+  },
+  "workspaces": [
+    "app/*"
+  ],
+  "sapux": [
+    "app/products"
+  ]
 }
