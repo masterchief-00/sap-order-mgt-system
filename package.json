@@ -16,7 +16,10 @@
   "main": "index.js",
   "scripts": {
     "start": "cds-serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cross-env cds_env_profiles=test jest"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "cds": {
     "requires": {
@@ -24,6 +27,14 @@
         "kind": "sqlite",
         "credentials": {
           "url": "db/oms.db"
+        }
+      },
+      "[test]": {
+        "db": {
+          "kind": "sqlite",
+          "credentials": {
+            "url": ":memory:"
+          }
         }
       }
     }
@@ -37,8 +48,13 @@
     "@sap/xssec": "^4"
   },
   "devDependencies": {
+    "@cap-js/cds-test": "^1.0.1",
     "@cap-js/sqlite": "^2.4",
+    "@sap/cds-dk": "^9.9.2",
     "cds-plugin-ui5": "^0.13.6",
+    "cross-env": "^10.1.0",
+    "cross-fetch": "^4.1.0",
+    "jest": "^30.4.2",
     "sqlite3": "^6.0.1"
   }
 }

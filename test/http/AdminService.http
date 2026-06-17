@@ -8,123 +8,103 @@
 GET {{server}}/admin/Products
 Authorization: Basic {{username}}:{{password}}
 
-
-### Products Drafts GET
-# @name Products_Drafts_GET
-GET {{server}}/admin/Products?$filter=(IsActiveEntity eq false)
-Authorization: Basic {{username}}:{{password}}
-
-
-### Products Draft POST
-# @name Products_Draft_POST
+### Products
+# @name Products_POST
 POST {{server}}/admin/Products
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
+  "ID": "79697031-0059-44b3-92ef-bed9b4165cb4",
   "title": "Install package 'randexp' to create data for regex ^[A-Za-z0-9. ]",
   "description": "Install package 'randexp' to create data for regex ^[A-Za-z0-9. ]",
-  "price": 3.25,
-  "stock": 39,
-  "expiryDate": "2002-10-04",
+  "price": 16.95,
+  "stock": 14,
+  "expiryDate": "2007-10-28",
   "reviews": [
     {
-      "ID": "1454290c-892c-4a0c-b039-32da3b0754f5",
-      "createdAt": "2008-05-04T22:00:00.000Z",
-      "createdBy": "createdBy.v64y@example.net",
-      "modifiedAt": "2021-01-10T22:00:00.000Z",
-      "modifiedBy": "modifiedBy.v64y@example.com",
+      "ID": "26510834-e337-4e60-95b5-bc095d7b02a5",
+      "createdAt": "2017-07-28T22:00:00.000Z",
+      "createdBy": "createdBy.fs7w2@example.org",
+      "modifiedAt": "2005-09-21T22:00:00.000Z",
+      "modifiedBy": "modifiedBy.fs7w2@example.org",
       "reviewer": {
-        "ID": "76283683-8b49-48f7-8dee-84ba2a63d377"
+        "ID": "2103706e-498d-482e-846b-8329d4cb8699"
       },
-      "rating": 52.47,
-      "comment": "comment-1454290"
+      "rating": 100.09,
+      "comment": "comment-26510834"
     },
     {
-      "ID": "14542914-9a5c-4367-908f-bff08b418e53",
-      "createdAt": "2007-01-10T22:00:00.000Z",
-      "createdBy": "createdBy.v64z@example.org",
-      "modifiedAt": "2008-09-11T22:00:00.000Z",
-      "modifiedBy": "modifiedBy.v64z@example.net",
+      "ID": "26510835-6204-4094-ac24-5c60c632bc80",
+      "createdAt": "2022-04-24T22:00:00.000Z",
+      "createdBy": "createdBy.fs7w3@example.net",
+      "modifiedAt": "2003-03-21T22:00:00.000Z",
+      "modifiedBy": "modifiedBy.fs7w3@example.net",
       "reviewer": {
-        "ID": "76283683-8b49-48f7-8dee-84ba2a63d377"
+        "ID": "2103706e-498d-482e-846b-8329d4cb8699"
       },
-      "rating": 58.73,
-      "comment": "comment-1454291"
+      "rating": 76.28,
+      "comment": "comment-26510835"
     }
   ],
-  "createdAt": "2011-11-01T22:00:00.000Z",
-  "createdBy": "createdBy.64fu9@example.org",
-  "modifiedAt": "2017-04-26T22:00:00.000Z",
-  "modifiedBy": "modifiedBy.64fu9@example.com"
+  "createdAt": "2009-06-17T22:00:00.000Z",
+  "createdBy": "createdBy.4qtgn@example.org",
+  "modifiedAt": "2010-04-05T22:00:00.000Z",
+  "modifiedBy": "modifiedBy.4qtgn@example.org"
 }
 
 
-### Result from POST request above
-@draftID={{Products_Draft_POST.response.body.$.ID}}
-
-
-### Products Draft PATCH
-# @name Products_Draft_Patch
-PATCH {{server}}/admin/Products(ID={{draftID}},IsActiveEntity=false)
+### Products
+# @name Products_PATCH
+PATCH {{server}}/admin/Products/79697031-0059-44b3-92ef-bed9b4165cb4
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
+  "ID": "79697031-0059-44b3-92ef-bed9b4165cb4",
   "title": "Install package 'randexp' to create data for regex ^[A-Za-z0-9. ]",
   "description": "Install package 'randexp' to create data for regex ^[A-Za-z0-9. ]",
-  "price": 3.25,
-  "stock": 39,
-  "expiryDate": "2002-10-04",
+  "price": 16.95,
+  "stock": 14,
+  "expiryDate": "2007-10-28",
   "reviews": [
     {
-      "ID": "1454290c-892c-4a0c-b039-32da3b0754f5",
-      "createdAt": "2008-05-04T22:00:00.000Z",
-      "createdBy": "createdBy.v64y@example.net",
-      "modifiedAt": "2021-01-10T22:00:00.000Z",
-      "modifiedBy": "modifiedBy.v64y@example.com",
+      "ID": "26510834-e337-4e60-95b5-bc095d7b02a5",
+      "createdAt": "2017-07-28T22:00:00.000Z",
+      "createdBy": "createdBy.fs7w2@example.org",
+      "modifiedAt": "2005-09-21T22:00:00.000Z",
+      "modifiedBy": "modifiedBy.fs7w2@example.org",
       "reviewer": {
-        "ID": "76283683-8b49-48f7-8dee-84ba2a63d377"
+        "ID": "2103706e-498d-482e-846b-8329d4cb8699"
       },
-      "rating": 52.47,
-      "comment": "comment-1454290"
+      "rating": 100.09,
+      "comment": "comment-26510834"
     },
     {
-      "ID": "14542914-9a5c-4367-908f-bff08b418e53",
-      "createdAt": "2007-01-10T22:00:00.000Z",
-      "createdBy": "createdBy.v64z@example.org",
-      "modifiedAt": "2008-09-11T22:00:00.000Z",
-      "modifiedBy": "modifiedBy.v64z@example.net",
+      "ID": "26510835-6204-4094-ac24-5c60c632bc80",
+      "createdAt": "2022-04-24T22:00:00.000Z",
+      "createdBy": "createdBy.fs7w3@example.net",
+      "modifiedAt": "2003-03-21T22:00:00.000Z",
+      "modifiedBy": "modifiedBy.fs7w3@example.net",
       "reviewer": {
-        "ID": "76283683-8b49-48f7-8dee-84ba2a63d377"
+        "ID": "2103706e-498d-482e-846b-8329d4cb8699"
       },
-      "rating": 58.73,
-      "comment": "comment-1454291"
+      "rating": 76.28,
+      "comment": "comment-26510835"
     }
   ],
-  "createdAt": "2011-11-01T22:00:00.000Z",
-  "createdBy": "createdBy.64fu9@example.org",
-  "modifiedAt": "2017-04-26T22:00:00.000Z",
-  "modifiedBy": "modifiedBy.64fu9@example.com"
+  "createdAt": "2009-06-17T22:00:00.000Z",
+  "createdBy": "createdBy.4qtgn@example.org",
+  "modifiedAt": "2010-04-05T22:00:00.000Z",
+  "modifiedBy": "modifiedBy.4qtgn@example.org"
 }
 
 
-### Products Draft Prepare
-# @name Products_Draft_Prepare
-POST {{server}}/admin/Products(ID={{draftID}},IsActiveEntity=false)/AdminService.draftPrepare
+### Products
+# @name Products_DELETE
+DELETE {{server}}/admin/Products/79697031-0059-44b3-92ef-bed9b4165cb4
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
-
-{}
-
-
-### Products Draft Activate
-# @name Products_Draft_Activate
-POST {{server}}/admin/Products(ID={{draftID}},IsActiveEntity=false)/AdminService.draftActivate
-Content-Type: application/json
-Authorization: Basic {{username}}:{{password}}
-
-{}
 
 
 ### User
@@ -133,64 +113,45 @@ GET {{server}}/admin/User
 Authorization: Basic {{username}}:{{password}}
 
 
-### User Drafts GET
-# @name User_Drafts_GET
-GET {{server}}/admin/User?$filter=(IsActiveEntity eq false)
-Authorization: Basic {{username}}:{{password}}
-
-
-### User Draft POST
-# @name User_Draft_POST
+### User
+# @name User_POST
 POST {{server}}/admin/User
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "names": "names-7628368",
-  "email": "email-7628368",
-  "createdAt": "2001-04-09T22:00:00.000Z",
-  "createdBy": "createdBy.4ji34@example.net",
-  "modifiedAt": "2015-01-09T22:00:00.000Z",
-  "modifiedBy": "modifiedBy.4ji34@example.net"
+  "ID": "2103706e-498d-482e-846b-8329d4cb8699",
+  "names": "names-2103706",
+  "email": "email-2103706",
+  "createdAt": "2011-02-27T22:00:00.000Z",
+  "createdBy": "createdBy.1938a@example.net",
+  "modifiedAt": "2002-07-08T22:00:00.000Z",
+  "modifiedBy": "modifiedBy.1938a@example.com"
 }
 
 
-### Result from POST request above
-@draftID={{User_Draft_POST.response.body.$.ID}}
-
-
-### User Draft PATCH
-# @name User_Draft_Patch
-PATCH {{server}}/admin/User(ID={{draftID}},IsActiveEntity=false)
+### User
+# @name User_PATCH
+PATCH {{server}}/admin/User/2103706e-498d-482e-846b-8329d4cb8699
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "names": "names-7628368",
-  "email": "email-7628368",
-  "createdAt": "2001-04-09T22:00:00.000Z",
-  "createdBy": "createdBy.4ji34@example.net",
-  "modifiedAt": "2015-01-09T22:00:00.000Z",
-  "modifiedBy": "modifiedBy.4ji34@example.net"
+  "ID": "2103706e-498d-482e-846b-8329d4cb8699",
+  "names": "names-2103706",
+  "email": "email-2103706",
+  "createdAt": "2011-02-27T22:00:00.000Z",
+  "createdBy": "createdBy.1938a@example.net",
+  "modifiedAt": "2002-07-08T22:00:00.000Z",
+  "modifiedBy": "modifiedBy.1938a@example.com"
 }
 
 
-### User Draft Prepare
-# @name User_Draft_Prepare
-POST {{server}}/admin/User(ID={{draftID}},IsActiveEntity=false)/AdminService.draftPrepare
+### User
+# @name User_DELETE
+DELETE {{server}}/admin/User/2103706e-498d-482e-846b-8329d4cb8699
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
-
-{}
-
-
-### User Draft Activate
-# @name User_Draft_Activate
-POST {{server}}/admin/User(ID={{draftID}},IsActiveEntity=false)/AdminService.draftActivate
-Content-Type: application/json
-Authorization: Basic {{username}}:{{password}}
-
-{}
 
 
 ### Orders
@@ -199,122 +160,103 @@ GET {{server}}/admin/Orders
 Authorization: Basic {{username}}:{{password}}
 
 
-### Orders Drafts GET
-# @name Orders_Drafts_GET
-GET {{server}}/admin/Orders?$filter=(IsActiveEntity eq false)
-Authorization: Basic {{username}}:{{password}}
-
-
-### Orders Draft POST
-# @name Orders_Draft_POST
+### Orders
+# @name Orders_POST
 POST {{server}}/admin/Orders
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
+  "ID": "31433655-f5fe-4cfd-9b4c-a82a480b1df8",
   "customer": {
-    "ID": "76283683-8b49-48f7-8dee-84ba2a63d377"
+    "ID": "2103706e-498d-482e-846b-8329d4cb8699"
   },
   "items": [
     {
-      "ID": "29420547-8b6c-4c4d-ad06-17505d5dd493",
-      "createdAt": "2008-06-21T22:00:00.000Z",
-      "createdBy": "createdBy.hil1f@example.com",
-      "modifiedAt": "2010-08-04T22:00:00.000Z",
-      "modifiedBy": "modifiedBy.hil1f@example.com",
+      "ID": "55856578-4c6e-4809-b8d5-bb2894b4af6e",
+      "createdAt": "2006-06-06T22:00:00.000Z",
+      "createdBy": "createdBy.3bpx5@example.org",
+      "modifiedAt": "2008-03-13T22:00:00.000Z",
+      "modifiedBy": "modifiedBy.3bpx5@example.net",
       "product": {
-        "ID": "10284849-c889-419c-886d-38009550761f"
+        "ID": "79697031-0059-44b3-92ef-bed9b4165cb4"
       },
-      "quantity": 51,
-      "unit_price": 52.24
+      "quantity": 71,
+      "unit_price": 58.96
     },
     {
-      "ID": "29420548-a463-4e09-9460-8110d1ead9ce",
-      "createdAt": "2017-10-31T22:00:00.000Z",
-      "createdBy": "createdBy.hil1g@example.net",
-      "modifiedAt": "2004-10-24T22:00:00.000Z",
-      "modifiedBy": "modifiedBy.hil1g@example.org",
+      "ID": "55856580-d4cd-4869-b535-b4e3db1e7d9c",
+      "createdAt": "2006-06-16T22:00:00.000Z",
+      "createdBy": "createdBy.3bpx6@example.net",
+      "modifiedAt": "2016-08-27T22:00:00.000Z",
+      "modifiedBy": "modifiedBy.3bpx6@example.net",
       "product": {
-        "ID": "10284849-c889-419c-886d-38009550761f"
+        "ID": "79697031-0059-44b3-92ef-bed9b4165cb4"
       },
-      "quantity": 57,
-      "unit_price": 82.45
+      "quantity": 44,
+      "unit_price": 34.54
     }
   ],
-  "totalPrice": 3.98,
-  "status": "Pending",
-  "createdAt": "2016-02-07T22:00:00.000Z",
-  "createdBy": "createdBy.dik6l@example.net",
-  "modifiedAt": "2018-01-26T22:00:00.000Z",
-  "modifiedBy": "modifiedBy.dik6l@example.net"
+  "totalPrice": 96.45,
+  "status": "Cancelled",
+  "createdAt": "2019-01-21T22:00:00.000Z",
+  "createdBy": "createdBy.ipqd3@example.net",
+  "modifiedAt": "2002-08-11T22:00:00.000Z",
+  "modifiedBy": "modifiedBy.ipqd3@example.net"
 }
 
 
-### Result from POST request above
-@draftID={{Orders_Draft_POST.response.body.$.ID}}
-
-
-### Orders Draft PATCH
-# @name Orders_Draft_Patch
-PATCH {{server}}/admin/Orders(ID={{draftID}},IsActiveEntity=false)
+### Orders
+# @name Orders_PATCH
+PATCH {{server}}/admin/Orders/31433655-f5fe-4cfd-9b4c-a82a480b1df8
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
+  "ID": "31433655-f5fe-4cfd-9b4c-a82a480b1df8",
   "customer": {
-    "ID": "76283683-8b49-48f7-8dee-84ba2a63d377"
+    "ID": "2103706e-498d-482e-846b-8329d4cb8699"
   },
   "items": [
     {
-      "ID": "29420547-8b6c-4c4d-ad06-17505d5dd493",
-      "createdAt": "2008-06-21T22:00:00.000Z",
-      "createdBy": "createdBy.hil1f@example.com",
-      "modifiedAt": "2010-08-04T22:00:00.000Z",
-      "modifiedBy": "modifiedBy.hil1f@example.com",
+      "ID": "55856578-4c6e-4809-b8d5-bb2894b4af6e",
+      "createdAt": "2006-06-06T22:00:00.000Z",
+      "createdBy": "createdBy.3bpx5@example.org",
+      "modifiedAt": "2008-03-13T22:00:00.000Z",
+      "modifiedBy": "modifiedBy.3bpx5@example.net",
       "product": {
-        "ID": "10284849-c889-419c-886d-38009550761f"
+        "ID": "79697031-0059-44b3-92ef-bed9b4165cb4"
       },
-      "quantity": 51,
-      "unit_price": 52.24
+      "quantity": 71,
+      "unit_price": 58.96
     },
     {
-      "ID": "29420548-a463-4e09-9460-8110d1ead9ce",
-      "createdAt": "2017-10-31T22:00:00.000Z",
-      "createdBy": "createdBy.hil1g@example.net",
-      "modifiedAt": "2004-10-24T22:00:00.000Z",
-      "modifiedBy": "modifiedBy.hil1g@example.org",
+      "ID": "55856580-d4cd-4869-b535-b4e3db1e7d9c",
+      "createdAt": "2006-06-16T22:00:00.000Z",
+      "createdBy": "createdBy.3bpx6@example.net",
+      "modifiedAt": "2016-08-27T22:00:00.000Z",
+      "modifiedBy": "modifiedBy.3bpx6@example.net",
       "product": {
-        "ID": "10284849-c889-419c-886d-38009550761f"
+        "ID": "79697031-0059-44b3-92ef-bed9b4165cb4"
       },
-      "quantity": 57,
-      "unit_price": 82.45
+      "quantity": 44,
+      "unit_price": 34.54
     }
   ],
-  "totalPrice": 3.98,
-  "status": "Pending",
-  "createdAt": "2016-02-07T22:00:00.000Z",
-  "createdBy": "createdBy.dik6l@example.net",
-  "modifiedAt": "2018-01-26T22:00:00.000Z",
-  "modifiedBy": "modifiedBy.dik6l@example.net"
+  "totalPrice": 96.45,
+  "status": "Cancelled",
+  "createdAt": "2019-01-21T22:00:00.000Z",
+  "createdBy": "createdBy.ipqd3@example.net",
+  "modifiedAt": "2002-08-11T22:00:00.000Z",
+  "modifiedBy": "modifiedBy.ipqd3@example.net"
 }
 
 
-### Orders Draft Prepare
-# @name Orders_Draft_Prepare
-POST {{server}}/admin/Orders(ID={{draftID}},IsActiveEntity=false)/AdminService.draftPrepare
+### Orders
+# @name Orders_DELETE
+DELETE {{server}}/admin/Orders/31433655-f5fe-4cfd-9b4c-a82a480b1df8
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
-
-{}
-
-
-### Orders Draft Activate
-# @name Orders_Draft_Activate
-POST {{server}}/admin/Orders(ID={{draftID}},IsActiveEntity=false)/AdminService.draftActivate
-Content-Type: application/json
-Authorization: Basic {{username}}:{{password}}
-
-{}
 
 
 ### OrderItems
@@ -330,41 +272,41 @@ Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "ID": "29420547-8b6c-4c4d-ad06-17505d5dd493",
-  "createdAt": "2008-06-21T22:00:00.000Z",
-  "createdBy": "createdBy.hil1f@example.com",
-  "modifiedAt": "2010-08-04T22:00:00.000Z",
-  "modifiedBy": "modifiedBy.hil1f@example.com",
+  "ID": "55856578-4c6e-4809-b8d5-bb2894b4af6e",
+  "createdAt": "2006-06-06T22:00:00.000Z",
+  "createdBy": "createdBy.3bpx5@example.org",
+  "modifiedAt": "2008-03-13T22:00:00.000Z",
+  "modifiedBy": "modifiedBy.3bpx5@example.net",
   "product": {
-    "ID": "10284849-c889-419c-886d-38009550761f"
+    "ID": "79697031-0059-44b3-92ef-bed9b4165cb4"
   },
-  "quantity": 51,
-  "unit_price": 52.24
+  "quantity": 71,
+  "unit_price": 58.96
 }
 
 
 ### OrderItems
 # @name OrderItems_PATCH
-PATCH {{server}}/admin/OrderItems(up_=[object Object],ID=29420547-8b6c-4c4d-ad06-17505d5dd493)
+PATCH {{server}}/admin/OrderItems(up_=[object Object],ID=55856578-4c6e-4809-b8d5-bb2894b4af6e)
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "ID": "29420547-8b6c-4c4d-ad06-17505d5dd493",
-  "createdAt": "2008-06-21T22:00:00.000Z",
-  "createdBy": "createdBy.hil1f@example.com",
-  "modifiedAt": "2010-08-04T22:00:00.000Z",
-  "modifiedBy": "modifiedBy.hil1f@example.com",
+  "ID": "55856578-4c6e-4809-b8d5-bb2894b4af6e",
+  "createdAt": "2006-06-06T22:00:00.000Z",
+  "createdBy": "createdBy.3bpx5@example.org",
+  "modifiedAt": "2008-03-13T22:00:00.000Z",
+  "modifiedBy": "modifiedBy.3bpx5@example.net",
   "product": {
-    "ID": "10284849-c889-419c-886d-38009550761f"
+    "ID": "79697031-0059-44b3-92ef-bed9b4165cb4"
   },
-  "quantity": 51,
-  "unit_price": 52.24
+  "quantity": 71,
+  "unit_price": 58.96
 }
 
 
 ### OrderItems
 # @name OrderItems_DELETE
-DELETE {{server}}/admin/OrderItems(up_=[object Object],ID=29420547-8b6c-4c4d-ad06-17505d5dd493)
+DELETE {{server}}/admin/OrderItems(up_=[object Object],ID=55856578-4c6e-4809-b8d5-bb2894b4af6e)
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}

@@ -13,7 +13,6 @@ service CustomerService @(odata: '/browse') {
             modifiedBy
         };
 
-    @odata.draft.enabled
     entity Reviews @(restrict: [
         {
             grant: 'READ',
