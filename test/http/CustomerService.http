@@ -69,82 +69,29 @@ Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "ID": "30424626-47f0-480e-9bfd-57b2747c56e3",
   "items": [
     {
-      "ID": "27761554-93e4-485f-b5a7-31f6c172b1b7",
-      "createdAt": "2022-02-11T22:00:00.000Z",
-      "createdBy": "createdBy.gj0ya@example.org",
-      "modifiedAt": "2001-09-13T22:00:00.000Z",
-      "modifiedBy": "modifiedBy.gj0ya@example.com",
       "product": {
-        "ID": "43984800-72a8-4e94-9377-1a2967057213"
+        "ID": "60417645-2b7e-430d-9571-3931f7007c14"
       },
-      "quantity": 98,
+      "quantity": 8,
       "unit_price": 51.66
-    },
-    {
-      "ID": "27761555-e263-49e2-99b6-257d55c3d9dd",
-      "createdAt": "2009-01-22T22:00:00.000Z",
-      "createdBy": "createdBy.gj0yb@example.net",
-      "modifiedAt": "2014-03-09T22:00:00.000Z",
-      "modifiedBy": "modifiedBy.gj0yb@example.net",
-      "product": {
-        "ID": "43984800-72a8-4e94-9377-1a2967057213"
-      },
-      "quantity": 79,
-      "unit_price": 65.43
     }
   ],
   "totalPrice": 25.11,
-  "status": "Completed",
-  "createdAt": "2014-01-26T22:00:00.000Z",
-  "createdBy": "createdBy.i43si@example.org",
-  "modifiedAt": "2011-04-15T22:00:00.000Z",
-  "modifiedBy": "modifiedBy.i43si@example.org"
+  "status": "Completed"
 }
 
 
 ### Orders
 # @name Orders_PATCH
-PATCH {{server}}/browse/Orders/30424626-47f0-480e-9bfd-57b2747c56e3
+PATCH {{server}}/browse/Orders/18763d17-b59c-476f-9728-7142159dd380
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "ID": "30424626-47f0-480e-9bfd-57b2747c56e3",
-  "items": [
-    {
-      "ID": "27761554-93e4-485f-b5a7-31f6c172b1b7",
-      "createdAt": "2022-02-11T22:00:00.000Z",
-      "createdBy": "createdBy.gj0ya@example.org",
-      "modifiedAt": "2001-09-13T22:00:00.000Z",
-      "modifiedBy": "modifiedBy.gj0ya@example.com",
-      "product": {
-        "ID": "43984800-72a8-4e94-9377-1a2967057213"
-      },
-      "quantity": 98,
-      "unit_price": 51.66
-    },
-    {
-      "ID": "27761555-e263-49e2-99b6-257d55c3d9dd",
-      "createdAt": "2009-01-22T22:00:00.000Z",
-      "createdBy": "createdBy.gj0yb@example.net",
-      "modifiedAt": "2014-03-09T22:00:00.000Z",
-      "modifiedBy": "modifiedBy.gj0yb@example.net",
-      "product": {
-        "ID": "43984800-72a8-4e94-9377-1a2967057213"
-      },
-      "quantity": 79,
-      "unit_price": 65.43
-    }
-  ],
   "totalPrice": 25.11,
-  "status": "Completed",
-  "createdAt": "2014-01-26T22:00:00.000Z",
-  "createdBy": "createdBy.i43si@example.org",
-  "modifiedAt": "2011-04-15T22:00:00.000Z",
-  "modifiedBy": "modifiedBy.i43si@example.org"
+  "status": "Pending"
 }
 
 
