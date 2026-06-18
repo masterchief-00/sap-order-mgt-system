@@ -107,15 +107,6 @@ annotate service.Products with @(
             @UI.Hidden,
         },
     ],
-    UI.DataPoint #stock           : {
-        Value        : stock,
-        Visualization: #Progress,
-        TargetValue  : 100,
-    },
-    Communication.Contact #contact: {
-        $Type: 'Communication.ContactType',
-        fn   : title,
-    },
     UI.DataPoint #averageRating   : {
         Value            : averageRating,
         Visualization    : #Rating,
@@ -159,14 +150,7 @@ annotate service.Products with @(
 );
 
 annotate service.Products with @(
-    UI.HeaderFacets                  : [],
-    UI.FieldGroup #BackNavigationLink: {Data: [{
-        $Type         : 'UI.DataFieldWithIntentBasedNavigation',
-        Value         : 'Back to Catalog Workspace',
-        // 🌟 Text displayed on screen
-        SemanticObject: 'Products',
-        Action        : 'manage'
-    }]}
+    UI.HeaderFacets                  : []
 );
 
 
@@ -276,25 +260,6 @@ annotate service.User with {
                 },
             ],
             Label : 'User names',
-        },
-        Common.ValueListWithFixedValues : true,
-    )
-};
-
-annotate service.User with {
-    email @(
-        Common.FieldControl : #Mandatory,
-        Common.ValueList : {
-            $Type : 'Common.ValueListType',
-            CollectionPath : 'User',
-            Parameters : [
-                {
-                    $Type : 'Common.ValueListParameterInOut',
-                    LocalDataProperty : email,
-                    ValueListProperty : 'email',
-                },
-            ],
-            Label : 'User email',
         },
         Common.ValueListWithFixedValues : true,
     )

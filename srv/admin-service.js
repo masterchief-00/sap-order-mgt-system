@@ -21,6 +21,8 @@ module.exports = class CustomerService extends cds.ApplicationService {
     })
 
     this.after('READ', 'Products', async (data, req) => {
+      if (req.target && req.target.name !== 'FioriAdminService.Products') return
+
       const products = Array.isArray(data) ? data : [data]
       for (const product of products) {
         // stock criticality
