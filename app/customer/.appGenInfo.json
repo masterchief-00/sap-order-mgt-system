@@ -1,0 +1,32 @@
+{
+  "generationParameters": {
+    "generationDate": "Thu Jun 18 2026 11:34:24 GMT+0200 (GMT+02:00)",
+    "generatorPlatform": "Visual Studio Code",
+    "serviceType": "Local CAP",
+    "metadataFilename": "",
+    "serviceUrl": "http://localhost:4004/fiori/admin/",
+    "appName": "customer",
+    "appTitle": "Customers UI",
+    "appDescription": "An SAP Fiori application to expose customer details to the admin",
+    "appNamespace": "ns",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.149.0",
+    "enableEslint": true,
+    "enableTypeScript": false,
+    "showMockDataInfo": false,
+    "generatorVersion": "1.25.0",
+    "template": "List Report Page V4",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [
+      {
+        "type": "Main Entity",
+        "value": "User"
+      },
+      {
+        "type": "Navigation Entity",
+        "value": "orders"
+      }
+    ],
+    "launchText": "To launch the generated app, start your CAP project:  and navigate to the following location in your browser:\n\nhttp://localhost:4004/ns.customer/index.html"
+  }
+}

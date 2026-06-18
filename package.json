@@ -18,7 +18,9 @@
     "start": "cds-serve",
     "test": "cross-env cds_env_profiles=test jest",
     "test:coverage": "jest --coverage",
-    "watch-products": "cds watch --open ns.products/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-products": "cds watch --open ns.products/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-customer": "cds watch --open ns.customer/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-orders": "cds watch --open ns.orders/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "jest": {
     "testEnvironment": "node"
@@ -63,6 +65,8 @@
     "app/*"
   ],
   "sapux": [
-    "app/products"
+    "app/products",
+    "app/customer",
+    "app/orders"
   ]
 }

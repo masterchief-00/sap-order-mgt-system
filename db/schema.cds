@@ -25,10 +25,13 @@ entity Orders : managed {
         customer   : Association to User;
         items      : Composition of many OrderItems;
         totalPrice : Decimal;
+
+        @assert.range
+        @Common.ValueListWithFixedValues: true
         status     : String enum {
-            completed = 'Completed';
-            pending = 'Pending';
-            cancelled = 'Cancelled'
+            Pending = 'Pending';
+            Cancelled = 'Cancelled';
+            Completed = 'Completed';
         }
 }
 
