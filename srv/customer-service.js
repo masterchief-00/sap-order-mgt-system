@@ -6,7 +6,7 @@ module.exports = class CustomerService extends cds.ApplicationService {
   async init () {
     const { Orders, Products } = this.entities
 
-    this.before(['CREATE', 'UPDATE'], Orders, async req => {
+    this.before(['CREATE', 'PATCH'], Orders, async req => {
       const order = req.data
 
       if (!Array.isArray(order.items) || order.items.length === 0) return

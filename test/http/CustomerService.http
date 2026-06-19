@@ -5,7 +5,7 @@
 
 ### Products
 # @name Products_GET
-GET {{server}}/browse/Products
+GET {{server}}/browse/Products?$expand=reviews
 Authorization: Basic {{username}}:{{password}}
 
 

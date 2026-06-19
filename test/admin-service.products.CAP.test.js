@@ -7,7 +7,7 @@ const { GET, POST, PATCH, DELETE, defaults } = cds.test(
 defaults.auth = { username: 'alice' }
 defaults.path = '/admin'
 
-describe('Admin service - products unit tests', () => {
+describe('Admin service - CAP - products unit tests', () => {
   let generatedBookId
 
   test('Should retrieve all products', async () => {
