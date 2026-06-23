@@ -40,7 +40,14 @@
             "url": ":memory:"
           }
         }
-      }
+      },
+      "[production]": {
+        "db": {
+          "kind": "hana-cloud"
+        },
+        "auth": "xsuaa"
+      },
+      "html5-repo": true
     }
   },
   "dependencies": {

@@ -65,7 +65,7 @@ module.exports = class CustomerService extends cds.ApplicationService {
         if (productReviews.length > 0) {
           product.reviewCount = productReviews.length
           const totalRatingScore = productReviews.reduce(
-            (sum, review) => sum + review.rating,
+            (sum, review) => sum + Number(review.rating),
             0
           )
           const average = totalRatingScore / productReviews.length
