@@ -90,6 +90,15 @@
 				}
 			}
 		},
+		"extends": {
+			"extensions": {
+				"sap.ui.controllerExtensions": {
+					"sap.fe.templates.ListReport.ListReportController": {
+						"controllerName": "ns.orders.ext.customFilter.CustomFilter"
+					}
+				}
+			}
+		},
 		"resources": {
 			"css": []
 		},
@@ -129,6 +138,9 @@
 								}
 							},
 							"controlConfiguration": {
+								"@com.sap.vocabularies.UI.v1.SelectionFields": {
+									"filterDefaultsFunction": "ns.orders.ext.customFilter.CustomFilterPanel.getFilters"
+								},
 								"@com.sap.vocabularies.UI.v1.LineItem": {
 									"tableSettings": {
 										"type": "GridTable"

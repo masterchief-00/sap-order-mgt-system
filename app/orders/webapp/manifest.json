@@ -81,7 +81,7 @@
       "extensions": {
         "sap.ui.controllerExtensions": {
           "sap.fe.templates.ListReport.ListReportController": {
-            "controllerName": "ns.orders.ext.customFilter.customFilter"
+            "controllerName": "ns.orders.ext.customFilter.CustomFilter"
           }
         }
       }
@@ -126,7 +126,7 @@
               },
               "controlConfiguration": {
                 "@com.sap.vocabularies.UI.v1.SelectionFields": {
-                  "filterDefaultsFunction": "ns.orders.ext.customFilter.customFilterPanel.getFilters"
+                  "filterDefaultsFunction": "ns.orders.ext.customFilter.CustomFilterPanel.getFilters"
                 },
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
