@@ -77,6 +77,15 @@
         "uri": "i18n/i18n.properties"
       }
     },
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {
+          "sap.fe.templates.ListReport.ListReportController": {
+            "controllerName": "ns.orders.ext.customFilter.customFilter"
+          }
+        }
+      }
+    },
     "resources": {
       "css": []
     },
@@ -116,6 +125,9 @@
                 }
               },
               "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.SelectionFields": {
+                  "filterDefaultsFunction": "ns.orders.ext.customFilter.customFilterPanel.getFilters"
+                },
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
                     "type": "GridTable"
