@@ -1,0 +1,36 @@
+{
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.Admin",
+      "description": "Admin access"
+    },
+    {
+      "name": "$XSAPPNAME.User",
+      "description": "User access"
+    }
+  ],
+  "oauth2-configuration": {
+    "token-validity": 900,
+    "refresh-token-validity": 1800,
+    "credential-types": [
+      "binding-secret",
+      "x509"
+    ]
+  },
+  "attributes": [],
+  "role-templates": [
+    {
+      "name": "Admin",
+      "scope-references": [
+        "$XSAPPNAME.Admin"
+      ]
+    },
+    {
+      "name": "User",
+      "scope-references": [
+        "$XSAPPNAME.User"
+      ]
+    }
+  ]
+}

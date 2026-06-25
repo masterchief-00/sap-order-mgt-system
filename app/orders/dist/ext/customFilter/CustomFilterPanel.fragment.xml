@@ -1,0 +1,117 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:mdc="sap.ui.mdc"
+>
+
+    <Panel
+        id="customFilterPanel"
+        headerText="Order Filters"
+        expandable="true"
+        expanded="true"
+        class="sapUiSmallMarginBottom"
+    >
+        <content>
+            <f:SimpleForm
+                id="filterForm"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="3"
+                labelSpanL="3"
+                labelSpanM="4"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="1"
+                emptySpanL="1"
+                emptySpanM="0"
+                emptySpanS="0"
+                columnsXL="2"
+                columnsL="2"
+                columnsM="1"
+                singleContainerFullSize="false"
+            >
+                <f:content>
+
+                    <!-- CUSTOMER FILTER -->
+                    <Label id="customerInputLbl" text="Customer" labelFor="customerInput" />
+                    <Input 
+                        id="customerInput"
+                        placeholder="Search customer by name or ID"
+                        showSuggestion="true"
+                        suggestionItemSelected=".onCustomerSelected"
+                        suggest=".onCustomerSuggest"
+                        liveChange=".onCustomerLiveChange"
+                        width="100%"
+                    >
+                        <suggestionItems></suggestionItems>
+                    </Input>
+
+                    <!-- DATE FILTER -->
+                    <Label id="orderDateRangeLbl" labelFor="orderDateRange" text="Date" />
+                    <DateRangeSelection
+                        id="orderDateRange"
+                        placeholder="Select Date Range"
+                        displayFormat="MMM dd, YYYY"
+                        change=".onDateRangeChange"
+                        width="100%"
+                    />
+
+                    <!-- AMOUNT FILTER -->
+                    <Label id="amountRangeHBoxLbl" text="Total Amount(USD)" labelFor="amountRangeHBox"></Label>
+                    <HBox id="amountRangeHBox" alignItems="Center" width="100%">
+                        <StepInput
+                            id="amountFrom"
+                            placeholder="Min"
+                            min="0"
+                            step="15"
+                            width="45%"
+                            change=".onAmountChange"
+                            description="USD"
+                        />
+                        <Text id="amountSeparatorLbl" text=" - " class="sapUiSmallMarginBeginEnd"/>
+                        <StepInput
+                            id="amountTo"
+                            placeholder="Max"
+                            min="0"
+                            step="15"
+                            width="45%"
+                            change=".onAmountChange"
+                            description="USD"
+                        />
+                    </HBox>
+
+                    <!-- ORDER STATUS FILTER -->
+                    <Label id="statusSelectLbl" text="Order Status" />
+                    <MultiComboBox
+                        id="statusSelect"
+                        placeholder="All Statuses"
+                        selectionChange=".onStatusChange"
+                        width="100%"
+                    >
+                        <core:Item id="statusOpt1" key="Completed" text="Completed" />
+                        <core:Item id="statusOpt2" key="Cancelled" text="Cancelled" />
+                        <core:Item id="statusOpt3" key="Pending" text="Pending" />
+                    </MultiComboBox>
+                </f:content>
+            </f:SimpleForm>
+            <Toolbar id="toolBar" class="sapUiSmallMarginTop">
+                <ToolbarSpacer id="toolBarSpacer" />
+                <Button 
+                    id="btnResetFilters"
+                    text="Reset"
+                    type="Transparent"
+                    press=".onResetFilters"
+                />
+                <Button 
+                    id="btnApplyFilters"
+                    text="Apply Filters"
+                    type="Emphasized"
+                    press=".onApplyFilters"
+                />
+            </Toolbar>
+        </content>
+    </Panel>
+
+</core:FragmentDefinition>
