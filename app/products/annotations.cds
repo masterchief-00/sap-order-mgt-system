@@ -2,7 +2,7 @@ using FioriAdminService as service from '../../srv/admin-service';
 using from '../../db/schema';
 
 annotate service.Products with @(
-    UI.FieldGroup #GeneratedGroup : {
+    UI.FieldGroup #GeneratedGroup           : {
         $Type: 'UI.FieldGroupType',
         Data : [
             {
@@ -42,7 +42,7 @@ annotate service.Products with @(
             },
         ],
     },
-    UI.Facets                     : [
+    UI.Facets                               : [
         {
             $Type : 'UI.ReferenceFacet',
             ID    : 'GeneratedFacet1',
@@ -62,7 +62,7 @@ annotate service.Products with @(
             Target: 'reviews/@UI.LineItem#ReviewsSubmitted',
         },
     ],
-    UI.LineItem                   : [
+    UI.LineItem                             : [
         {
             $Type: 'UI.DataField',
             Value: title,
@@ -107,13 +107,13 @@ annotate service.Products with @(
             @UI.Hidden,
         },
     ],
-    UI.DataPoint #averageRating   : {
+    UI.DataPoint #averageRating             : {
         Value            : averageRating,
         Visualization    : #Rating,
         TargetValue      : 5,
         @Common.QuickInfo: 'Average rating pulled from the reviews',
     },
-    UI.HeaderInfo                 : {
+    UI.HeaderInfo                           : {
         Title         : {
             $Type: 'UI.DataField',
             Value: title,
@@ -126,7 +126,7 @@ annotate service.Products with @(
         },
         TypeImageUrl  : 'https://tse1.mm.bing.net/th/id/OIP.aklObbWZEUA6B6ezrInPjAHaHa?w=800&h=800&rs=1&pid=ImgDetMain&o=7&rm=3',
     },
-    UI.FieldGroup #MoreDetails    : {
+    UI.FieldGroup #MoreDetails              : {
         $Type: 'UI.FieldGroupType',
         Data : [
             {
@@ -147,12 +147,45 @@ annotate service.Products with @(
             },
         ],
     },
+    Aggregation.ApplySupported              : {
+        Transformations       : [
+            'aggregate',
+            'groupby',
+            'filter'
+        ],
+        GroupableProperties   : [title],
+        AggregatableProperties: [{Property: stock}]
+    },
+    Analytics.AggregatedProperty #totalStock: {
+        Name                : 'stock',
+        AggregationMethod   : 'sum',
+        AggregatableProperty: stock,
+        ![@Common.Label]    : 'Stock'
+    },
+    UI.Chart #stockChart                    : {
+        ChartType          : #Bar,
+        Dimensions         : [title],
+        DimensionAttributes: [{
+            Dimension: title,
+            Role     : #Category
+        }],
+        DynamicMeasures    : [ ![@Analytics.AggregatedProperty#totalStock] ],
+        MeasureAttributes  : [{
+            DynamicMeasures: ![@Analytics.AggregatedProperty#totalStock],
+            Role           : #Axis1
+        }]
+    },
+    UI.SelectionPresentationVariant #spvDefault: {
+        SelectionVariant   : {SelectOptions: []},
+        PresentationVariant: {
+            Text          : 'Default',
+            Visualizations: [
+                ![@UI.Chart#stockChart],
+                ![@UI.LineItem]
+            ]
+        }
+    }
 );
-
-annotate service.Products with @(
-    UI.HeaderFacets                  : []
-);
-
 
 annotate service.Products.reviews with @(
     UI.LineItem #ReviewsSubmitted   : [
@@ -199,9 +232,9 @@ annotate service.Products.reviews with @(
         $Type: 'UI.FieldGroupType',
         Data : [
             {
-                $Type : 'UI.DataField',
-                Value : reviewer_ID,
-                Label : 'Reviewer',
+                $Type: 'UI.DataField',
+                Value: reviewer_ID,
+                Label: 'Reviewer',
             },
             {
                 $Type: 'UI.DataField',
@@ -246,42 +279,38 @@ annotate service.Products.reviews with @(
         TypeImageUrl  : 'https://tse1.mm.bing.net/th/id/OIP.SXkUwphMyUJ5U4OgehuHBQHaHc?w=860&h=865&rs=1&pid=ImgDetMain&o=7&rm=3',
     },
 );
+
 annotate service.User with {
     names @(
-        Common.FieldControl : #Mandatory,
-        Common.ValueList : {
-            $Type : 'Common.ValueListType',
-            CollectionPath : 'User',
-            Parameters : [
-                {
-                    $Type : 'Common.ValueListParameterInOut',
-                    LocalDataProperty : names,
-                    ValueListProperty : 'names',
-                },
-            ],
-            Label : 'User names',
+        Common.FieldControl            : #Mandatory,
+        Common.ValueList               : {
+            $Type         : 'Common.ValueListType',
+            CollectionPath: 'User',
+            Parameters    : [{
+                $Type            : 'Common.ValueListParameterInOut',
+                LocalDataProperty: names,
+                ValueListProperty: 'names',
+            }, ],
+            Label         : 'User names',
         },
-        Common.ValueListWithFixedValues : true,
+        Common.ValueListWithFixedValues: true,
     )
 };
 
 annotate service.Products.reviews with {
     reviewer @(
-        Common.ExternalID : reviewer.names,
-        Common.ValueList : {
-            $Type : 'Common.ValueListType',
-            CollectionPath : 'User',
-            Parameters : [
-                {
-                    $Type : 'Common.ValueListParameterInOut',
-                    LocalDataProperty : reviewer_ID,
-                    ValueListProperty : 'ID',
-                },
-            ],
-            Label : 'Reviewer',
+        Common.ExternalID              : reviewer.names,
+        Common.ValueList               : {
+            $Type         : 'Common.ValueListType',
+            CollectionPath: 'User',
+            Parameters    : [{
+                $Type            : 'Common.ValueListParameterInOut',
+                LocalDataProperty: reviewer_ID,
+                ValueListProperty: 'ID',
+            }, ],
+            Label         : 'Reviewer',
         },
-        Common.ValueListWithFixedValues : true,
-        Common.FieldControl : #Mandatory,
+        Common.ValueListWithFixedValues: true,
+        Common.FieldControl            : #Mandatory,
     )
 };
-

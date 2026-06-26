@@ -49,7 +49,8 @@
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
-        "sap.fe.templates": {}
+        "sap.fe.templates": {},
+        "sap.viz": {}
       }
     },
     "contentDensities": {
@@ -103,11 +104,11 @@
         "ProductsList": {
           "type": "Component",
           "id": "ProductsList",
-          "name": "sap.fe.templates.ListReport",
+          "name": "sap.fe.templates.AnalyticalListPage",
           "options": {
             "settings": {
               "contextPath": "/Products",
-              "variantManagement": "Page",
+              "defaultTemplateAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#spvDefault",
               "navigation": {
                 "Products": {
                   "detail": {

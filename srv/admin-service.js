@@ -9,13 +9,21 @@ module.exports = class CustomerService extends cds.ApplicationService {
         if (req.target && req.target.name !== 'FioriAdminService.Products')
           return
 
-        if (!query.columns) query.columns = ['*']
-        const hasReviews = query.columns.some(
-          col => col.ref && col.ref[0] === 'reviews'
-        )
+        // const url = req._?.req?.url ?? req.http?.req?.url ?? ''
 
-        if (!hasReviews) {
-          query.columns.push({ ref: ['reviews'], expand: ['*'] })
+        // const isAggregationQuery = url.includes('$apply')
+
+        const isAggregationQuery = !!req.query.SELECT.groupBy
+
+        if (!isAggregationQuery) {
+          if (!query.columns) query.columns = ['*']
+          const hasReviews = query.columns.some(
+            col => col.ref && col.ref[0] === 'reviews'
+          )
+
+          if (!hasReviews) {
+            query.columns.push({ ref: ['reviews'], expand: ['*'] })
+          }
         }
       }
     })
@@ -53,7 +61,16 @@ module.exports = class CustomerService extends cds.ApplicationService {
     this.after('READ', 'Products', async (data, req) => {
       if (req.target && req.target.name !== 'FioriAdminService.Products') return
 
+      // const url = req._?.req?.url ?? req.http?.req?.url ?? ''
+
+      // const isAggregationQuery = url.includes('$apply')
+
+      const isAggregationQuery = !!req.query.SELECT.groupBy
+
+      if (isAggregationQuery) return
+
       const products = Array.isArray(data) ? data : [data]
+
       for (const product of products) {
         // stock criticality
         if (product.stock === 0) product.stockCriticality = 1 // Red
