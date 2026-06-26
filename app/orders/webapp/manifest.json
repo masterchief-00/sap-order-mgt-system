@@ -125,9 +125,6 @@
                 }
               },
               "controlConfiguration": {
-                "@com.sap.vocabularies.UI.v1.SelectionFields": {
-                  "filterDefaultsFunction": "ns.orders.ext.customFilter.CustomFilterPanel.getFilters"
-                },
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
                     "type": "GridTable"
